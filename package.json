@@ -1,0 +1,25 @@
+{
+  "name": "aljazeera-automation-tests",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "codeceptjs run --steps",
+    "test:desktop": "codeceptjs run --grep @desktop --steps",
+    "test:mobile": "codeceptjs run --grep @mobile --steps",
+    "test:mostread": "codeceptjs run --grep @mostread --steps",
+    "test:livestream": "codeceptjs run --grep @livestream --steps",
+    "test:accessibility": "codeceptjs run --grep @accessibility --steps",
+    "test:headless": "HEADLESS=true codeceptjs run --steps",
+    "test:parallel": "codeceptjs run-multiple parallel --steps",
+    "report": "allure generate output/allure-results --clean -o output/allure-report",
+    "report:open": "allure serve output/allure-results",
+    "clean": "rm -rf output/*"
+  },
+  "devDependencies": {
+    "@codeceptjs/allure-legacy": "^1.0.2",
+    "@codeceptjs/configure": "^1.0.6",
+    "@wdio/selenium-standalone-service": "^8.14.0",
+    "allure-commandline": "^2.36.0",
+    "codeceptjs": "^3.7.5",
+    "webdriverio": "^9.22.0"
+  }
+}
